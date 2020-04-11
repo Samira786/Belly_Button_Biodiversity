@@ -1,10 +1,10 @@
-# Belly_Button_Biodiversity
+# Belly Button Biodiversity
 
 ### Overview
 Research has been performed on synthetic beef and the strand of bacteria used to develop it. The research is compiled in a JSON file and data visualization has been used through Javascript to display the data as a dashboard.
 ### Resources
-Files for the Data Visualization: index.html, plots.js, samples.json, 
-Technology Stack: JavaScript, Plotly.js, HTML
+Files for the Data Visualization: index.html, plots.js, samples.json <br />
+Technology Stack: JavaScript, Plotly.js, HTML <br />
 Github website: https://samira786.github.io/Belly_Button_Biodiversity/
 ### Dashboard
 Javascript is used to create-
