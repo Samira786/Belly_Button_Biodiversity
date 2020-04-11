@@ -12,7 +12,7 @@ Javascript is used to create-
 2.	Display Metadata info of the candidate
 3.	A bar chart displaying the Top 10 Belly Button OTUs*
 4.	A gauge chart displaying washing frequency
-5.	A bubble chart displaying Sample Values and OTU IDs
+5.	A bubble chart displaying Sample Values and OTU IDs <br />
 •	OTU = Operational Taxonomic Unit – the categorization of bacteria based on sequence similarity
 
 ![dashboard](https://github.com/Samira786/Belly_Button_Biodiversity/blob/master/Dashboard.png)
