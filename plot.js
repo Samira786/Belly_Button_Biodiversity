@@ -1,3 +1,12 @@
+// Create Charts
+function buildCharts(sample1) {
+  
+  barChart1(sample1)
+  gaugeChart(sample1)
+  bubbleChart(sample1)
+ }
+ 
+
 function init() {
     var selector = d3.select("#selDataset");
     
@@ -46,7 +55,7 @@ function init() {
       var samples= data.samples;
       var resultArray = samples.filter(sampleObj => sampleObj.id == sample);
       var currentSample = resultArray[0];
-  
+ 
       var barSamples = {
         x: currentSample.sample_values.slice(0,10).reverse(),
         y: currentSample.otu_ids.slice(0,10).map(otuID=> "OTU " + otuID.toString()).reverse(),
@@ -65,7 +74,7 @@ function init() {
   }
   
   //Gauge Chart
-  function gaugeChart1(sample1){
+  function gaugeChart(sample1){
     d3.json("samples.json").then((data) => {
       var samples= data.metadata;
       var resultArray = samples.filter(sampleObj => sampleObj.id == sample1);
@@ -100,22 +109,26 @@ function init() {
   }
   
   //Bubble Chart
-  function bubbleChart1(sample1){
+  function bubbleChart(sample1){
     d3.json("samples.json").then((data) => {
       var samples= data.samples;
-      var resultArray = samples.filter(sampleObj => sampleObj.id == sample);
+      var resultArray = samples.filter(sampleObj => sampleObj.id == sample1);
       var currentSample = resultArray[0];
-  
+      console.log(currentSample)
+      var otu_ids = currentSample.otu_ids;
+      var otu_labels = currentSample.otu_labels;
+      var sample_values = currentSample.sample_values;
       var bubbleSamples = {
-        x: currentSample.otu_ids,
-        y: currentSample.sample_values,
-        text: currentSample.otu_labels,
+
+        x: otu_ids,
+        y: sample_values,
+        text: otu_labels,
         mode: 'markers',
         marker: {
-          color: currentSample.otu_ids,
+          color: otu_ids,
           colorscale: 'Earth',
           opacity: [1, 0.8, 0.6, 0.4],
-          size: currentSample.sample_values.map(sampleSize => sampleSize/2) 
+          size: sample_values.map(sampleSize => sampleSize/2) 
         }
       };
   
@@ -131,10 +144,4 @@ function init() {
   }  
   
   
-  // Create Charts
-  function buildCharts(sample1) {
-   barChart(sample1)
-   gaugeChart(sample1)
-   bubbleChart(sample1)
-  }
   
